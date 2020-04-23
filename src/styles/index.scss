@@ -1,0 +1,435 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto-Regular.ttf)
+}
+
+@import 'variables';
+
+html {
+  font-size: $root-font-size;
+  font-family: $font-family;
+  text-align: center;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+.container {
+  max-width: 1100px;
+  margin: auto auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.only-print {
+  display: none;
+}
+
+p {
+  font-size: $paragraph-font-size;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+html body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.apresentation {
+  width: 100%;
+}
+header {
+  background-color: $background-color;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  padding-bottom: 75px;
+
+  h1 {
+    margin-top: 0rem;;
+    font-family: inherit;
+    font-weight: 400;
+    padding-top: 3rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);
+
+    font-weight: 400;
+    padding-top: 75px;
+    font-size: 2em;
+}  
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  margin: 2rem;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-color: #fff;
+}
+.others {
+  order:4 !important;
+
+ 
+}
+.experiences {
+  position: relative;
+  display: block;
+  &__timeline {
+    width: 10px;
+    background-color:  $timeline-color;
+    height: 10px;
+    position: absolute;
+    left: calc(50%-10px);
+    height: 90%;
+    order: 1;
+    border-top: 2px solid $timeline-color;
+    border-bottom: 2px solid $timeline-color;
+    border-radius: 5px;
+
+  }
+  ul {
+    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    li {
+      background-color: #fff;
+      width: calc(50%-85px);
+      padding: 1.5rem;
+      padding-top: 2.5rem;
+      box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+      // margin-top: 2rem;
+      position: relative;
+
+
+    }
+
+    li:nth-child(even) {
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+
+      .experiences__list__period {
+        position: absolute;
+        left: -1rem;
+        top: 0.5rem;
+        padding-left: 1.5rem;
+        border-bottom: 1px dotted $timeline-color;
+        color: $timeline-color;
+
+      }
+
+    }
+    li:nth-child(odd) {
+      margin-bottom: 3rem;
+      
+      margin-left: 1rem;
+      .experiences__list__period {
+        position: absolute;
+        right: -1rem;
+        top: 1rem;
+        padding-right: 1.5rem;
+        border-bottom: 1px dotted $timeline-color;
+        color: $timeline-color;
+      }
+    }
+  }
+}
+
+.skills {
+  flex-wrap: wrap;
+  display: flex;
+  order: 2;
+  align-items: stretch;
+  width: 100%;
+
+  h2 {
+    width: 100%;
+  }
+  h3 {
+    margin: 1rem 0 0 0;
+  }
+  div {
+    margin: 1rem;
+  }
+  ul {
+    // width: calc(30%-10px);
+    // min-width: 30%;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    // padding: 1rem;
+    background-color: #4F6873;
+    color: #fff;
+    border-radius: 5px;
+    //margin: 0 auto;
+    align-content: stretch;
+    flex-grow: 1;
+
+
+    li {
+      text-align: justify;
+      width: 100%;
+      .item-name {
+        width: 100%;
+        display: block;
+      }
+      .time {
+        color: yellow;
+      }
+      margin-bottom: 1rem;
+
+    }
+  }
+}
+    .courses {
+      order: 4 !important;
+    }
+
+.university {
+  background-color: $background-color;
+  color: white;
+  padding: 0.5rem;
+}
+@media print {
+  * {
+      background: transparent;
+      color: #000;
+      text-shadow: 0 0 0 0; 
+      filter: none;
+     -ms-filter: none;
+     box-shadow: 0 0 0 0 ;
+     text-align: left;
+     font-size: 12px;
+  }
+  html {
+    background-color: #fff;
+  }
+  .only-print {
+    display: block;
+  }
+  footer {
+    display: none !important;
+  } 
+  .others {
+    order:3 !important;
+
+    .item-name {
+      font-weight: bold;
+    }
+    .time {
+      color: #000 !important;
+    }
+  }
+  h3, h4 {
+    margin: 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  header {
+    padding: 0;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    h1 {
+      margin: 0;
+      padding-top: 1rem;
+    }
+  }
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .skills {
+    //flex-direction: column;
+    float: left;
+    display: block;
+    width: 230px;
+    order: 1;
+    ul {
+      background-color: #fafafa;
+      width: 200px;
+      margin: 0.4rem;
+      padding: 0.5rem;
+      page-break-inside: avoid;
+      position:relative;
+      box-shadow: none;
+      li {
+          page-break-inside:avoid;
+          
+        }
+    }
+  }
+
+.profile {
+  box-shadow: none;
+  margin: 0;
+  text-align: left;
+  padding: 0;
+}
+  .experiences {
+    display: block;
+    width: calc(100%-230px);
+    float: left;
+    order: 2;
+    &__timeline {
+      width: 10px;
+      background-color:  $timeline-color;
+      height: 10px;
+      left: 0px;
+      height: 90%;
+      
+    }
+
+    ul {
+      position: relative;
+      display: block;
+
+      li {
+        // box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+        padding: 0;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+        page-break-inside: avoid;
+        padding-left: 2rem;
+
+      }
+
+      li:nth-child(odd), li:nth-child(even) {
+       margin: 0;
+      width: 100%;
+      margin-left: 1rem;
+      .experiences__list__period {
+        position: absolute;
+        left: -0.8rem;
+        right: initial;
+        top: 0.5rem;
+        padding-left: 1.5rem;
+        border-bottom: 1px dotted $timeline-color;
+        color: $timeline-color;
+      }
+    }
+    }
+  }
+
+
+}
+
+
+
+
+//FOOTER
+
+footer {
+  padding: 0;
+  margin-top: 3rem;
+  background-color: #263238;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .personal-info {
+    margin: 0 2rem;
+  }
+}
+.svg-inline--fa {
+  vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
+}
+.rounded-social-buttons .social-button.medium {
+  background: #292929;
+}
+
+.rounded-social-buttons .social-button.whatsapp {
+  background: #05E373;
+}
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
