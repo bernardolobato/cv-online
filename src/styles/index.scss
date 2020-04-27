@@ -196,6 +196,8 @@ ul {
   color: white;
   padding: 0.5rem;
 }
+
+
 @media print {
   * {
       background: transparent;
@@ -206,7 +208,24 @@ ul {
      box-shadow: 0 0 0 0 ;
      text-align: left;
      font-size: 12px;
+     line-height: 1.5;
+     float: none !important;
   }
+.apresentation {
+  margin: none;
+}
+header h1, header h2 {
+  
+    padding: 0;
+    margin: 0;
+  
+}
+  .skills ul li .time, .fa-star {
+    color: grey !important;
+   }
+path {
+  color: $timeline-color;
+}
   html {
     background-color: #fff;
   }
@@ -218,17 +237,24 @@ ul {
   } 
   .others {
     order:3 !important;
-
+    page-break-inside: avoid;
+    page-break-before: always;
+    display: block;
     .item-name {
       font-weight: bold;
     }
     .time {
-      color: #000 !important;
+      color: #000 ;
     }
   }
+
   h3, h4 {
     margin: 0;
+    // margin-bottom: 0.2rem;
   }
+  h4 {
+    margin-bottom: 0
+    }
   h2 {
     font-size: 1.5rem;
   }
@@ -243,12 +269,14 @@ ul {
   }
   .container {
     width: 100%;
-    max-width: 100%;
+    max-width: 95%;
+    margin: 0;
+
   }
 
   .skills {
     //flex-direction: column;
-    float: left;
+    // float: left;
     display: block;
     width: 230px;
     order: 1;
@@ -276,7 +304,7 @@ ul {
   .experiences {
     display: block;
     width: calc(100%-230px);
-    float: left;
+    // float: left;
     order: 2;
     &__timeline {
       width: 10px;
@@ -299,6 +327,8 @@ ul {
         position: relative;
         page-break-inside: avoid;
         padding-left: 2rem;
+        display: block !important;
+
 
       }
 
@@ -319,10 +349,10 @@ ul {
     }
   }
 
-
+.courses {
+  page-break-before: always;
 }
-
-
+}
 
 
 //FOOTER
